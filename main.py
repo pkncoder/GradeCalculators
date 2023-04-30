@@ -15,7 +15,7 @@ i = 0
 cont = True
 num = 0
 
-usrch = input('Would you like to use Letter to GPA(LetToGPA), or Number to GPA (NumToGPA)?\n')
+usrch = input('Would you like to use Letter to GPA(LetToGPA), Percent(whole number) to GPA (NumToGPA), or Percent(whole number) to Average?(NumToAvg)\n')
 
 if usrch == 'LetToGPA':
 
@@ -39,7 +39,7 @@ if usrch == 'LetToGPA':
 
 elif usrch == 'NumToGPA':
 
-    print('Hello, welcome to a percent to GPA calculator. Type a negitive number when done.')
+    print('Hello, welcome to a percent to GPA calculator. Please type a negitive number when done!')
 
     while cont == True:
 
@@ -60,3 +60,30 @@ elif usrch == 'NumToGPA':
             
     gpa = num / i
     print(f'{gpa:.2f}')
+
+elif usrch == 'NumToAvg':
+
+    num1 = 0
+
+    print('Hello, welcome to a percent to letter plus number grade average! Please type a negitive number when done!')
+
+    while cont == True:
+
+        grd = int(input('Please input your grade (int only): '))
+
+        if grd < 0:
+            break
+
+        elif grd >= 0:
+            num1 += grd
+            i += 1
+
+        else:
+            print('Incorrect Input')
+
+    grd = num1 / i
+    print(f'{grd:.2f}')
+
+else:
+    
+    print('Incorrect Input')
